@@ -1,0 +1,198 @@
+html, body, section {
+  height: 100%;
+  overflow: hidden;
+}
+.layout {
+  width: 650px;
+  margin: 0 auto;
+}
+@media (min-width: 750px) {
+  .layout {
+    width: 650px
+  }
+}
+@media (min-width: 950px) {
+  .layout {
+    width: 850px
+  }
+}
+@media (min-width: 1050px) {
+  .layout {
+    width: 950px
+  }
+}
+@media (min-width: 1250px) {
+  .layout {
+    width: 1150px
+  }
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+#page-music > main {
+  height: calc(100% - 24vh)
+}
+main .aside {
+  float: left;
+  padding-top: 13vh;
+}
+main .aside > figure {
+  width: 46vh;
+  height: 46vh;
+  background: url(http://cloud.hunger-valley.com/music/public_tuijian_spring.jpg-small);
+  background-size: cover;
+  background-position: center center;
+}
+main .actions {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 5vh;
+}
+main .actions .iconfont {
+  font-size: 4.7vh;
+  color: grey;
+  cursor: pointer;
+}
+main .actions .iconfont:hover {
+  color: #fff;
+  transition: color .45s;
+}
+main .detail {
+  color: #fff;
+  font-size: 2.5vh;
+  padding-top: 15vh;
+  margin-left: 55vh;
+}
+main .detail .tag {
+  padding: 2vh 3vh;
+  background-color: rgba(255,50, 50,.45);
+  /* #2e6eec */
+ } 
+main .detail h1 {
+  font-size: 5.5vh;
+  margin-top: 2vh; 
+}
+main .detail .icons {
+  margin-top: 9.5vh;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 40vh;
+}
+main .detail .iconfont {
+  font-size: 3.5vh;
+}
+main .bar-area {
+  display: flex;
+  margin-top: 9.5vh;
+  align-items: center;
+}
+main .bar-area .bar {
+  height: .9vh;
+  position: relative;
+  border-radius: .25vh;
+  flex-grow: 1;
+  background-color: rgba(255, 255, 255, .4);
+}
+main .bar-area .bar-progress {
+  position: absolute;
+  border-radius: .25vh;
+  height: .9vh;
+  width: .5%;
+  background-color: #fff;
+  transition: width .75s;
+}
+main .bar-area .current-time {
+  width: 3vh;
+  margin-left: 1.5vh;
+}
+main .detail .lyric {
+  font-size: 3vh;
+  margin-top: 6vh;
+}
+.bg {
+  z-index: -1;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  bottom: -8px;
+  left: -8px;
+  background: url(https://tse2-mm.cn.bing.net/th/id/OIP.T_3lCYTbFOnOmzFKFrmyugHaEK?w=273&h=160&c=7&o=5&dpr=2.2&pid=1.7) center center no-repeat;
+  background-size: cover;
+  filter: blur(3px)
+}
+.bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .3);
+}
+footer {
+  height: 24vh;
+  color: rgba(250, 250, 250, .6);
+  background-color: rgba(255, 255, 255, .2);
+  box-shadow: 0px -.25vh .25vh .25vh rgba(255,255,255,0.2);
+}
+footer .box {
+  /* 为了达到点击按钮，有一定滑动效果 */
+  scroll-behavior: smooth; 
+  overflow: hidden; 
+  /* 因为下面的图片都设定 ，margin-left: 0.4vh,为了和上面的aside对齐所以设定 margin-left: -0.4vh; */
+  margin-left: -0.4vh;
+}
+footer > .layout {
+  position: relative;
+}
+footer .button {
+  font-size: 7vh;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  transition: color .4s;
+  top: calc(50% - 2vh - .5em);
+}
+footer:hover .button {
+  opacity: .9;
+}
+footer .button:hover {
+  color: rgba(255, 255, 255);
+}
+footer .layout .prev {
+  left: -6vh;
+}
+footer .layout .next {
+  right: -6vh;
+}
+footer .gallery figure {
+  width: 20vh;
+  height: 16vh;
+  background: url(https://tse3-mm.cn.bing.net/th/id/OIP.EVyiW3QXEy23E7eA_XdbKQHaE8?w=299&h=199&c=7&o=5&dpr=2.2&pid=1.7) center center;
+  background-size: cover;
+}
+footer .gallery {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+footer .gallery li {
+  display: inline-block;
+  margin: 2vh 4vh .4vh .4vh;
+  /* 设置margin-left 为 0.4vh 是因为如果不设置会导致第一个的设定的box-shadow不能正常显示 */
+}
+footer .gallery li:hover {
+  box-shadow: 0 0 .4vh .4vh rgba(255, 255, 255, .9)
+}
+footer .gallery li.active{
+  box-shadow: 0 0 .4vh .4vh rgba(255, 255, 255, .9)
+}
+footer .gallery figcaption {
+  text-align: center;
+  font-size: 2.1vh;
+  margin-top: .85vh;
+}
