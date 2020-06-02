@@ -2,7 +2,7 @@
 > Fun Fun Radio
 
 ### 基本介绍
-- 一个网页音乐电台
+- 一个网页音乐盒子
 
 主要功能：
 1. 专辑内(`同一个主题`)中音乐的自动播放，播放，暂停，下一曲，以及下一曲自动播放
@@ -37,7 +37,7 @@ var EventCenter = {
 
 `遇到的问题一：`点击右按钮，切换的专辑。当前视图显示的一排的第一个专辑背景图(`KTV金曲`)并不是完整显示的
 
-![nextBtn-bug1.png](http://ww1.sinaimg.cn/large/787b15a7gy1gddl3xeo37j20zw06cdtm.jpg)
+![nextBtn-bug1.png](./picture/nextBtn_bug_1.jpg)
 解决方法： 
 ```javascript
 // 每一个专辑的宽度(包括margin)
@@ -48,8 +48,9 @@ var rowCount = Math.floor(_this.$box.outerWidth(true)/itemWidth)
 ```
 
 `遇到的问题二：`快速点击左右按钮就会出现，明明是最后一张专辑了，即使到了最后依然会有向左偏移或是向右移偏移(`出现空白部分`)
-![nextBtn_bug.png](http://ww1.sinaimg.cn/large/787b15a7gy1gddkp2w456j20i202idhm.jpg)
-**解决方法： **
+![nextBtn_bug.png](./picture/nextBtn_bug.jpg)
+
+**解决方法**： 
 判断给最后一版本显示的专辑数是否小于 `rowCount`，如小于则下一次就不执行点击右按钮任何操作
 
 ```javascript
@@ -78,4 +79,4 @@ _this.$nextBtn.css('cursor', 'not-allowed')
 - 掌握animate.css 动画库的简单使用
 
 ### 技术关键字
-**JavaScript**、** Jquery**、**CSS3**、**animate.css**、**@media媒体查询**、**flex布局**
+**JavaScript**、**Jquery**、**CSS3**、**animate.css**、**@media媒体查询**、**flex布局**
