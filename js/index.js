@@ -83,7 +83,7 @@ var Footer = {
   },
   render: function() {
     var _this = this 
-    $.getJSON('https://jirenguapi.applinzi.com/fm/getChannels.php')
+    $.getJSON('https://jirenguapi.applinzi.com/fm/v2/getChannels.php')
      .done(function(ret) {
         console.log(ret)
         // api的返回的数据都包裹在一个 属性名为channels的对象中
@@ -159,7 +159,7 @@ var App = {
   loadMusic(callback) {
     var _this = this
     // 如双斜杆 前面不加协议，到时候会默认为打开页面所对应的url的协议
-    $.getJSON('https://jirenguapi.applinzi.com/fm/getSong.php', {channel:
+    $.getJSON('https://jirenguapi.applinzi.com/fm/v2/getSong.php', {channel:
       this.channelId
     }).done(function(ret) {
         _this.song = ret['song'][0]
@@ -169,7 +169,7 @@ var App = {
   }, 
   loadLyric() {
     var _this = this 
-    $.getJSON('https://jirenguapi.applinzi.com/fm/getLyric.php', {sid:
+    $.getJSON('https://jirenguapi.applinzi.com/fm/v2/getLyric.php', {sid:
       this.song.sid
     }).done(function(ret) {
        // 歌词的处理
